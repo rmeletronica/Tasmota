@@ -50,7 +50,7 @@
 #define PROJECT                "tasmota"         // PROJECT is used as the default topic delimiter
 
 // If not selected the default will be SONOFF_BASIC
-//#define MODULE                 SONOFF_BASIC      // [Module] Select default module from tasmota_template.h
+#define MODULE                 SONOFF_DG_10      // [Module] Select default module from tasmota_template.h
 #ifdef ESP8266
 #define FALLBACK_MODULE        SONOFF_BASIC      // [Module2] Select default module on fast reboot where USER_MODULE is user template
 //#define USER_TEMPLATE "{\"NAME\":\"Generic\",\"GPIO\":[1,1,1,1,1,1,1,1,1,1,1,1,1,1],\"FLAG\":0,\"BASE\":18}"  // [Template] Set JSON template
@@ -181,7 +181,7 @@ https://rya.nc/tasmota-fingerprint.html"
 // -- HTTP ----------------------------------------
 #define WEB_SERVER             2                 // [WebServer] Web server (0 = Off, 1 = Start as User, 2 = Start as Admin)
 #define WEB_PASSWORD           ""                // [WebPassword] Web server Admin mode Password for WEB_USERNAME (empty string = Disable)
-#define FRIENDLY_NAME          "Tasmota"         // [FriendlyName] Friendlyname up to 32 characters used by webpages and Alexa
+#define FRIENDLY_NAME          "RM Iot"         // [FriendlyName] Friendlyname up to 32 characters used by webpages and Alexa
 #define EMULATION              EMUL_NONE         // [Emulation] Select Belkin WeMo (single relay/light) or Hue Bridge emulation (multi relay/light) (EMUL_NONE, EMUL_WEMO or EMUL_HUE)
 #define EMULATION_HUE_1ST_GEN  false             // [Emulation] Force SetOption109 1 - if you only have Echo Dot 2nd gen devices
 //#define USE_CORS                                 // [Cors] Enable CORS - Be aware that this feature is unsecure ATM (https://github.com/arendst/Tasmota/issues/6767)
@@ -389,7 +389,7 @@ https://rya.nc/tasmota-fingerprint.html"
 //#define MY_LANGUAGE            nl_NL           // Dutch in the Nederland
 //#define MY_LANGUAGE            pl_PL           // Polish in Poland
 //#define MY_LANGUAGE            pt_BR           // Portuguese in Brazil
-//#define MY_LANGUAGE            pt_PT           // Portuguese in Portugal
+#define MY_LANGUAGE            pt_PT           // Portuguese in Portugal
 //#define MY_LANGUAGE            ro_RO           // Romanian in Romania
 //#define MY_LANGUAGE            ru_RU           // Russian in Russia
 //#define MY_LANGUAGE            sk_SK           // Slovak in Slovakia
@@ -459,9 +459,9 @@ https://rya.nc/tasmota-fingerprint.html"
 //  #define USE_MQTT_TLS_CA_CERT                   // [DEPRECATED] Now TLS supports dual mode using SetOption132 - this flag is now ignored
 //  #define USE_MQTT_AWS_IOT_LIGHT                 // Enable MQTT for AWS IoT in light mode, with user/password instead of private certificate
 //  #define USE_MQTT_AWS_IOT                       // [Deprecated] Enable MQTT for AWS IoT - requires a private key (+11.9k code, +0.4k mem)
-                                                 //   Note: you need to generate a private key + certificate per device and update 'tasmota/tasmota_aws_iot.cpp'
-                                                 //   Full documentation here: https://github.com/arendst/Tasmota/wiki/AWS-IoT
- #define USE_MQTT_TLS_DROP_OLD_FINGERPRINT          // If you use fingerprint (i.e. not CA) validation, the algorithm changed to a more secure one.
+                                                   // Note: you need to generate a private key + certificate per device and update 'tasmota/tasmota_aws_iot.cpp'
+                                                   // Full documentation here: https://github.com/arendst/Tasmota/wiki/AWS-IoT
+ #define USE_MQTT_TLS_DROP_OLD_FINGERPRINT         // If you use fingerprint (i.e. not CA) validation, the algorithm changed to a more secure one.
                                                    // Any valid fingerprint with the old algo will be automatically updated to the new algo.
                                                    // Enable this if you want to disable the old algo check, which should be more secure
 //  for USE_4K_RSA (support for 4096 bits certificates, instead of 2048), you need to uncommend `-DUSE_4K_RSA` in `build_flags` from `platform.ini` or `platform_override.ini`
